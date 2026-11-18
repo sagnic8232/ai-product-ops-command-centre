@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Excel / Office temp and lock files
+~$*
+
+# Archived AI replies (replaced by newer prompt batches)
+responses/archive/
+
+# Local run log
+outputs/run_log.csv
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
