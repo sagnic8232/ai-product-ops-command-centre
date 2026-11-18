@@ -1,0 +1,127 @@
+You are a Product Operations analyst reviewing weekly TPM status updates for software releases.
+For EACH update below, judge only from the update text and the fields given. Do not invent facts.
+
+Definitions:
+- inconsistent: true if reported_rag does not match what the text describes. Typical case: reported_rag is
+  "Green" but the text describes a slipped or likely-slipping date, a missed approval, quality below its exit
+  criterion, open P1 defects, failing tests, or a stalled dependency. Also true if the RAG is Amber/Red but the
+  text says everything is on track with no open problems. Otherwise false.
+- has_risk: true if the text describes a CURRENT, UNRESOLVED threat to schedule, quality, security or commercial
+  readiness. Resolved past problems and negated statements (e.g. "no escalations", "blocker is resolved") are NOT
+  risks. A dependency that is on schedule is NOT a risk by itself.
+- risks: each with category in ['Schedule', 'Quality', 'Security', 'Commercial', 'Dependency'], severity in [High, Medium, Low].
+- dependencies: anything the release needs from a team or party outside its own engineering team (a deliverable,
+  sign-off, approval or decision), even if on schedule. function must be one of ['Legal', 'Pricing', 'Finance', 'Marketing', 'Security', 'Platform Eng', 'QA', 'Support', 'Docs', 'Partner'].
+  "Partner" = an external commercial partner. Do not list teams that are merely informed.
+- needs_decision: true only if the text explicitly asks leadership for a decision.
+- evidence: a VERBATIM quote copied exactly from update_text (max 25 words). Every inconsistency, risk and
+  dependency needs one. If you cannot quote it, do not flag it.
+
+Return ONLY a JSON array (no prose, no markdown fences), one object per update, in this exact shape:
+[{"update_id": "U001",
+   "inconsistent": false, "inconsistency_reason": "", "inconsistency_evidence": "",
+   "has_risk": false,
+   "risks": [{"category": "Schedule", "severity": "High", "evidence": "..."}],
+   "dependencies": [{"function": "Pricing", "needed": "SKU approval", "evidence": "..."}],
+   "needs_decision": false, "decision": "",
+   "confidence": 0.0}]
+
+Updates:
+[
+ {
+  "update_id": "U013",
+  "release": "Data Catalog 1.0 (Major)",
+  "week": "W1",
+  "planned_ga": "2026-12-18",
+  "reported_rag": "Green",
+  "update_text": "Core metadata ingestion complete. Integration with the external lineage partner's connector has started. Legal has received the partner T&Cs for review."
+ },
+ {
+  "update_id": "U014",
+  "release": "Data Catalog 1.0 (Major)",
+  "week": "W2",
+  "planned_ga": "2026-12-18",
+  "reported_rag": "Green",
+  "update_text": "Partner integration 60% done. Legal sent redlines back to the partner on 27 Oct; the partner's counsel has not responded. 5 open P1 defects in search indexing."
+ },
+ {
+  "update_id": "U015",
+  "release": "Data Catalog 1.0 (Major)",
+  "week": "W3",
+  "planned_ga": "2026-12-18",
+  "reported_rag": "Amber",
+  "update_text": "Search indexing P1s down from 5 to 3. Code freeze will move from 20 Nov to 4 Dec. Partner redlines still open. Marketing has asked for final positioning by 25 Nov for the launch kit."
+ },
+ {
+  "update_id": "U016",
+  "release": "Data Catalog 1.0 (Major)",
+  "week": "W4",
+  "planned_ga": "2026-12-18",
+  "reported_rag": "Red",
+  "update_text": "The partner has still not returned the T&Cs, and Legal won't clear GA without them. With code freeze at 4 Dec, the 18 Dec GA is not achievable; proposing 15 Jan. Decision needed: hold GA for the partner connector, or ship 1.0 without it and add it in 1.1."
+ },
+ {
+  "update_id": "U017",
+  "release": "ML Feature Store 2.2 (Minor)",
+  "week": "W1",
+  "planned_ga": "2026-12-11",
+  "reported_rag": "Green",
+  "update_text": "Online store latency work done. Depends on Platform Eng's v2 identity API, planned for Sprint 46. Code freeze 13 Nov."
+ },
+ {
+  "update_id": "U018",
+  "release": "ML Feature Store 2.2 (Minor)",
+  "week": "W2",
+  "planned_ga": "2026-12-11",
+  "reported_rag": "Green",
+  "update_text": "Integration with the v2 identity API started against a mock. Platform Eng confirmed Sprint 46 delivery. QA plan approved."
+ },
+ {
+  "update_id": "U019",
+  "release": "ML Feature Store 2.2 (Minor)",
+  "week": "W4",
+  "planned_ga": "2026-12-11",
+  "reported_rag": "Amber",
+  "update_text": "Platform Eng now says the v2 identity API lands in Sprint 48, not 46. We can't finish integration testing until then, so code freeze moves to 20 Nov. GA of 11 Dec holds only if QA compresses to one week."
+ },
+ {
+  "update_id": "U020",
+  "release": "Query Engine 4.9.2 (Patch)",
+  "week": "W1",
+  "planned_ga": "2026-11-06",
+  "reported_rag": "Green",
+  "update_text": "Patch includes 14 customer-reported fixes. Code freeze done 9 Oct. QA regression suite 99.6% passed."
+ },
+ {
+  "update_id": "U021",
+  "release": "Query Engine 4.9.2 (Patch)",
+  "week": "W2",
+  "planned_ga": "2026-11-06",
+  "reported_rag": "Green",
+  "update_text": "Security scan clean. Release notes in review. On track for 6 Nov GA."
+ },
+ {
+  "update_id": "U022",
+  "release": "Query Engine 4.9.2 (Patch)",
+  "week": "W3",
+  "planned_ga": "2026-11-06",
+  "reported_rag": "Green",
+  "update_text": "Go/no-go approved on 4 Nov. GA on 6 Nov as planned."
+ },
+ {
+  "update_id": "U023",
+  "release": "Query Engine 4.9.2 (Patch)",
+  "week": "W4",
+  "planned_ga": "2026-11-06",
+  "reported_rag": "Green",
+  "update_text": "Shipped 6 Nov. No escalations in the first week; two support tickets, both configuration-related."
+ },
+ {
+  "update_id": "U024",
+  "release": "Connector Pack 3.0.5 (Patch)",
+  "week": "W1",
+  "planned_ga": "2026-11-13",
+  "reported_rag": "Green",
+  "update_text": "Patch bundles fixes for 6 connectors. Code freeze done 16 Oct. QA regression started."
+ }
+]

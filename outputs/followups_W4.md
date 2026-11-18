@@ -1,0 +1,137 @@
+# Follow-up drafts: W4 (as of 13 Nov 2026)
+
+Status: **DRAFT, needs human approval. Nothing has been sent.**
+
+## To: Arjun Iyer <arjun.iyer@example.com>
+**Subject:** [Release status W4] 2 items need your input: Missing update, Overdue action
+
+Hi Arjun,
+
+1. The W4 status update for Billing Integration 1.3 (R10) hasn't come in yet (due Thu 12 Nov 18:00). Please submit it by Monday 12:00 IST.
+2. [Billing Integration 1.3 (R10)] "Close metering accuracy gap to 99.9%" was due Thu 12 Nov (1 day overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Deepak Joshi <deepak.joshi@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Deepak,
+
+1. [Workload Manager 6.1.1 (R08)] "Submit W3 status update" was due Sat 07 Nov (6 days overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Farah Khan <farah.khan@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Farah,
+
+1. [Data Catalog 1.0 (R04)] "Chase partner counsel on T&C redlines" was due Wed 04 Nov (9 days overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Imran Sheikh <imran.sheikh@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Imran,
+
+1. [Query Engine 5.0 (R01)] "Confirm pen-test vendor slot or alternative vendor" was due Sat 07 Nov (6 days overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Karan Gupta <karan.gupta@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Karan,
+
+1. [ML Feature Store 2.2 (R05)] "Submit W3 status update" was due Sat 07 Nov (6 days overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Nisha Agarwal <nisha.agarwal@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Nisha,
+
+1. [Billing Integration 1.3 (R10)] "Finance sign-off on metering logic" was due Fri 06 Nov (7 days overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Priya Nair <priya.nair@example.com>
+**Subject:** [Release status W4] 2 items need your input: Overdue action, RAG check
+
+Hi Priya,
+
+1. Cloud Connector 3.1 (R02) is reported Green, but these milestones are blocked or slipping: Pricing approved (up to 9 days). Should the RAG be Amber? Please confirm by Monday 12:00 IST.
+2. [Connector Pack 3.0.5 (R07)] "Fix Salesforce API v61 test failures" was due Thu 12 Nov (1 day overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Rahul Menon <rahul.menon@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Rahul,
+
+1. [Cloud Connector 3.1 (R02)] "Escalate SKU approval after missed 4 Nov slot" was due Tue 10 Nov (3 days overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Rohit Bansal <rohit.bansal@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Rohit,
+
+1. [Cloud Connector 3.1 (R02)] "Prepare price list draft for publication" was due Thu 12 Nov (1 day overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Sneha Reddy <sneha.reddy@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Overdue action
+
+Hi Sneha,
+
+1. [Data Catalog 1.0 (R04)] "Fix 5 P1 defects in search indexing" was due Thu 12 Nov (1 day overdue). Can you share a new date or close it out by Monday 12:00 IST?
+
+Thanks,
+Product Operations
+
+---
+
+## To: Vikram Shah <vikram.shah@example.com>
+**Subject:** [Release status W4] 1 item needs your input: Late update
+
+Hi Vikram,
+
+1. Thanks for the W4 update on Query Engine 5.0 (R01). It arrived 18 h after the Thursday 18:00 deadline; on time helps us get the leadership summary out on Friday.
+
+Thanks,
+Product Operations
+
+---

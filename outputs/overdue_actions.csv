@@ -1,0 +1,11 @@
+action_id,release_id,description,owner,owner_function,raised_on,due_on,status,closed_on,days_overdue
+A010,R04,Chase partner counsel on T&C redlines,Farah Khan,Legal,2026-10-28,2026-11-04,Open,,9
+A025,R10,Finance sign-off on metering logic,Nisha Agarwal,Finance,2026-10-23,2026-11-06,Open,,7
+A023,R08,Submit W3 status update,Deepak Joshi,Engineering,2026-11-06,2026-11-07,Open,,6
+A001,R01,Confirm pen-test vendor slot or alternative vendor,Imran Sheikh,Security,2026-10-30,2026-11-07,Open,,6
+A016,R05,Submit W3 status update,Karan Gupta,Engineering,2026-11-06,2026-11-07,Open,,6
+A006,R02,Escalate SKU approval after missed 4 Nov slot,Rahul Menon,Product,2026-11-05,2026-11-10,Open,,3
+A011,R04,Fix 5 P1 defects in search indexing,Sneha Reddy,Engineering,2026-10-29,2026-11-12,Open,,1
+A007,R02,Prepare price list draft for publication,Rohit Bansal,Pricing,2026-11-05,2026-11-12,Open,,1
+A019,R07,Fix Salesforce API v61 test failures,Priya Nair,Engineering,2026-11-05,2026-11-12,Open,,1
+A026,R10,Close metering accuracy gap to 99.9%,Arjun Iyer,Engineering,2026-10-29,2026-11-12,Open,,1

@@ -1,0 +1,581 @@
+You are writing the weekly release status summary for product leadership. Use ONLY the facts in the
+JSON below. Do not add facts, dates or numbers that are not in it. If something is unknown, say so.
+
+Format (markdown, max ~300 words):
+## Weekly release summary - W4 (as of 2026-11-13)
+**Needs a decision** - bullet per decision: release, the decision, by when, who decides. If none, say "None".
+**What changed this week** - max 5 bullets, most material first (slips, new blockers, things resolved).
+**Who owes what** - table: Owner | Function | Item | Due | Days overdue (overdue items first).
+**Reporting hygiene** - one line: missing / late / stale updates by release and TPM.
+**Portfolio** - one line: count of releases by latest RAG; note any release whose reported RAG disagrees with its data.
+
+Facts:
+{
+ "releases": [
+  {
+   "release_id": "R01",
+   "product": "Query Engine",
+   "version": "5.0",
+   "release_type": "Major",
+   "planned_ga": "2026-12-04",
+   "forecast_ga": "2026-12-18",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R02",
+   "product": "Cloud Connector",
+   "version": "3.1",
+   "release_type": "Minor",
+   "planned_ga": "2026-11-20",
+   "forecast_ga": "2026-11-27",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R03",
+   "product": "Admin Console",
+   "version": "2.4",
+   "release_type": "Minor",
+   "planned_ga": "2026-11-27",
+   "forecast_ga": "2026-11-27",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R04",
+   "product": "Data Catalog",
+   "version": "1.0",
+   "release_type": "Major",
+   "planned_ga": "2026-12-18",
+   "forecast_ga": "2027-01-15",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R05",
+   "product": "ML Feature Store",
+   "version": "2.2",
+   "release_type": "Minor",
+   "planned_ga": "2026-12-11",
+   "forecast_ga": "2026-12-11",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R06",
+   "product": "Query Engine",
+   "version": "4.9.2",
+   "release_type": "Patch",
+   "planned_ga": "2026-11-06",
+   "forecast_ga": "2026-11-06",
+   "release_status": "Shipped"
+  },
+  {
+   "release_id": "R07",
+   "product": "Connector Pack",
+   "version": "3.0.5",
+   "release_type": "Patch",
+   "planned_ga": "2026-11-13",
+   "forecast_ga": "2026-11-20",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R08",
+   "product": "Workload Manager",
+   "version": "6.1.1",
+   "release_type": "Patch",
+   "planned_ga": "2026-11-27",
+   "forecast_ga": "2026-11-27",
+   "release_status": "Active"
+  },
+  {
+   "release_id": "R09",
+   "product": "Auth Service",
+   "version": "2.8-HF1",
+   "release_type": "Hotfix",
+   "planned_ga": "2026-10-28",
+   "forecast_ga": "2026-10-28",
+   "release_status": "Shipped"
+  },
+  {
+   "release_id": "R10",
+   "product": "Billing Integration",
+   "version": "1.3",
+   "release_type": "Minor",
+   "planned_ga": "2026-12-04",
+   "forecast_ga": "2026-12-11",
+   "release_status": "Active"
+  }
+ ],
+ "this_week_updates": [
+  {
+   "release_id": "R01",
+   "reported_rag": "Amber",
+   "text": "Code freeze completed 10 Nov. Regression now at 3%. Security sign-off expected 4 Dec, so GA forecast moves to 18 Dec. Need a leadership decision on whether to ship with the 3% regression documented as a known issue.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": "Whether to ship with the 3% join regression documented as a known issue."
+  },
+  {
+   "release_id": "R02",
+   "reported_rag": "Green",
+   "text": "Still waiting on the Pricing committee outcome from 12 Nov. Without an approved SKU we can't publish the price list, so GA will likely move to 27 Nov.",
+   "rag_inconsistent_with_text": true,
+   "decision_requested": ""
+  },
+  {
+   "release_id": "R03",
+   "reported_rag": "Green",
+   "text": "Code freeze done 30 Oct. QA complete at 98.8% pass rate, no P1s. Security review in progress, expected 15 Nov. Docs drafted.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": ""
+  },
+  {
+   "release_id": "R04",
+   "reported_rag": "Red",
+   "text": "The partner has still not returned the T&Cs, and Legal won't clear GA without them. With code freeze at 4 Dec, the 18 Dec GA is not achievable; proposing 15 Jan. Decision needed: hold GA for the partner connector, or ship 1.0 without it and add it in 1.1.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": "Hold GA for the partner connector, or ship 1.0 without it and add it in 1.1."
+  },
+  {
+   "release_id": "R05",
+   "reported_rag": "Amber",
+   "text": "Platform Eng now says the v2 identity API lands in Sprint 48, not 46. We can't finish integration testing until then, so code freeze moves to 20 Nov. GA of 11 Dec holds only if QA compresses to one week.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": ""
+  },
+  {
+   "release_id": "R06",
+   "reported_rag": "Green",
+   "text": "Shipped 6 Nov. No escalations in the first week; two support tickets, both configuration-related.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": ""
+  },
+  {
+   "release_id": "R07",
+   "reported_rag": "Amber",
+   "text": "SAP connector fixed. Salesforce tests still failing on the API v61 changes; GA moved to 20 Nov. Support has been told to hold the customer communication.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": ""
+  },
+  {
+   "release_id": "R08",
+   "reported_rag": "Green",
+   "text": "The scheduler deadlock blocker from last month is resolved and verified in QA. Code freeze done 30 Oct, QA at 99.1%, no P1s. On track for 27 Nov.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": ""
+  },
+  {
+   "release_id": "R09",
+   "reported_rag": "Green",
+   "text": "Closed. No further updates.",
+   "rag_inconsistent_with_text": false,
+   "decision_requested": ""
+  }
+ ],
+ "grounded_flags_this_week": [
+  {
+   "update_id": "U004",
+   "type": "risk",
+   "label": "Schedule",
+   "severity": "High",
+   "evidence": "Security sign-off expected 4 Dec, so GA forecast moves to 18 Dec.",
+   "needed": ""
+  },
+  {
+   "update_id": "U004",
+   "type": "risk",
+   "label": "Quality",
+   "severity": "Medium",
+   "evidence": "Regression now at 3%.",
+   "needed": ""
+  },
+  {
+   "update_id": "U004",
+   "type": "dependency",
+   "label": "Security",
+   "severity": "",
+   "evidence": "Security sign-off expected 4 Dec, so GA forecast moves to 18 Dec.",
+   "needed": "Security sign-off"
+  },
+  {
+   "update_id": "U008",
+   "type": "risk",
+   "label": "Schedule",
+   "severity": "High",
+   "evidence": "so GA will likely move to 27 Nov.",
+   "needed": ""
+  },
+  {
+   "update_id": "U008",
+   "type": "risk",
+   "label": "Commercial",
+   "severity": "High",
+   "evidence": "Without an approved SKU we can't publish the price list",
+   "needed": ""
+  },
+  {
+   "update_id": "U008",
+   "type": "dependency",
+   "label": "Pricing",
+   "severity": "",
+   "evidence": "Still waiting on the Pricing committee outcome from 12 Nov.",
+   "needed": "SKU approval"
+  },
+  {
+   "update_id": "U008",
+   "type": "inconsistency",
+   "label": "RAG vs text",
+   "severity": "",
+   "evidence": "so GA will likely move to 27 Nov.",
+   "needed": ""
+  },
+  {
+   "update_id": "U012",
+   "type": "dependency",
+   "label": "Security",
+   "severity": "",
+   "evidence": "Security review in progress, expected 15 Nov.",
+   "needed": "Security review sign-off"
+  },
+  {
+   "update_id": "U012",
+   "type": "dependency",
+   "label": "Docs",
+   "severity": "",
+   "evidence": "Docs drafted.",
+   "needed": "Release documentation"
+  },
+  {
+   "update_id": "U016",
+   "type": "risk",
+   "label": "Schedule",
+   "severity": "High",
+   "evidence": "the 18 Dec GA is not achievable; proposing 15 Jan.",
+   "needed": ""
+  },
+  {
+   "update_id": "U016",
+   "type": "risk",
+   "label": "Dependency",
+   "severity": "High",
+   "evidence": "The partner has still not returned the T&Cs, and Legal won't clear GA without them.",
+   "needed": ""
+  },
+  {
+   "update_id": "U016",
+   "type": "dependency",
+   "label": "Partner",
+   "severity": "",
+   "evidence": "The partner has still not returned the T&Cs",
+   "needed": "Returned T&Cs"
+  },
+  {
+   "update_id": "U016",
+   "type": "dependency",
+   "label": "Legal",
+   "severity": "",
+   "evidence": "Legal won't clear GA without them.",
+   "needed": "GA clearance"
+  },
+  {
+   "update_id": "U019",
+   "type": "risk",
+   "label": "Dependency",
+   "severity": "High",
+   "evidence": "Platform Eng now says the v2 identity API lands in Sprint 48, not 46.",
+   "needed": ""
+  },
+  {
+   "update_id": "U019",
+   "type": "risk",
+   "label": "Schedule",
+   "severity": "High",
+   "evidence": "GA of 11 Dec holds only if QA compresses to one week.",
+   "needed": ""
+  },
+  {
+   "update_id": "U019",
+   "type": "dependency",
+   "label": "Platform Eng",
+   "severity": "",
+   "evidence": "Platform Eng now says the v2 identity API lands in Sprint 48, not 46.",
+   "needed": "v2 identity API (now Sprint 48)"
+  },
+  {
+   "update_id": "U019",
+   "type": "dependency",
+   "label": "QA",
+   "severity": "",
+   "evidence": "GA of 11 Dec holds only if QA compresses to one week.",
+   "needed": "QA cycle compressed to one week"
+  },
+  {
+   "update_id": "U026",
+   "type": "risk",
+   "label": "Quality",
+   "severity": "High",
+   "evidence": "Salesforce tests still failing on the API v61 changes",
+   "needed": ""
+  },
+  {
+   "update_id": "U026",
+   "type": "risk",
+   "label": "Schedule",
+   "severity": "Medium",
+   "evidence": "GA moved to 20 Nov.",
+   "needed": ""
+  }
+ ],
+ "hygiene_this_week": [
+  {
+   "release_id": "R01",
+   "tpm": "Vikram Shah",
+   "is_missing": false,
+   "is_late": true,
+   "hours_late": 17.5,
+   "is_stale": false
+  },
+  {
+   "release_id": "R10",
+   "tpm": "Arjun Iyer",
+   "is_missing": true,
+   "is_late": false,
+   "hours_late": "",
+   "is_stale": false
+  }
+ ],
+ "slipped_or_blocked_milestones": [
+  {
+   "release_id": "R01",
+   "milestone": "Code freeze",
+   "owner_function": "Engineering",
+   "planned_date": "2026-11-06",
+   "forecast_date": "2026-11-10",
+   "actual_date": "2026-11-10",
+   "status": "Done",
+   "slip_days": 4,
+   "note": ""
+  },
+  {
+   "release_id": "R01",
+   "milestone": "QA complete (>=95% pass, 0 open P1)",
+   "owner_function": "QA",
+   "planned_date": "2026-11-20",
+   "forecast_date": "2026-11-27",
+   "actual_date": "",
+   "status": "In progress",
+   "slip_days": 7,
+   "note": ""
+  },
+  {
+   "release_id": "R01",
+   "milestone": "Security review sign-off",
+   "owner_function": "Security",
+   "planned_date": "2026-11-22",
+   "forecast_date": "2026-12-04",
+   "actual_date": "",
+   "status": "Blocked",
+   "slip_days": 12,
+   "note": "Pen-test vendor slot only from 1 Dec"
+  },
+  {
+   "release_id": "R02",
+   "milestone": "Pricing approved",
+   "owner_function": "Pricing",
+   "planned_date": "2026-11-10",
+   "forecast_date": "2026-11-19",
+   "actual_date": "",
+   "status": "Blocked",
+   "slip_days": 9,
+   "note": "Missed 4 Nov committee; outcome of 12 Nov slot pending"
+  },
+  {
+   "release_id": "R04",
+   "milestone": "Code freeze",
+   "owner_function": "Engineering",
+   "planned_date": "2026-11-20",
+   "forecast_date": "2026-12-04",
+   "actual_date": "",
+   "status": "In progress",
+   "slip_days": 14,
+   "note": ""
+  },
+  {
+   "release_id": "R04",
+   "milestone": "Legal review complete",
+   "owner_function": "Legal",
+   "planned_date": "2026-12-08",
+   "forecast_date": "2027-01-08",
+   "actual_date": "",
+   "status": "Blocked",
+   "slip_days": 31,
+   "note": "Partner T&Cs redlines unanswered"
+  },
+  {
+   "release_id": "R05",
+   "milestone": "Code freeze",
+   "owner_function": "Engineering",
+   "planned_date": "2026-11-13",
+   "forecast_date": "2026-11-20",
+   "actual_date": "",
+   "status": "In progress",
+   "slip_days": 7,
+   "note": "Waiting on Platform Eng v2 identity API (Sprint 48)"
+  },
+  {
+   "release_id": "R07",
+   "milestone": "QA complete (>=95% pass, 0 open P1)",
+   "owner_function": "QA",
+   "planned_date": "2026-10-30",
+   "forecast_date": "2026-11-17",
+   "actual_date": "",
+   "status": "In progress",
+   "slip_days": 18,
+   "note": "Salesforce connector tests failing"
+  },
+  {
+   "release_id": "R07",
+   "milestone": "Security review sign-off",
+   "owner_function": "Security",
+   "planned_date": "2026-11-01",
+   "forecast_date": "2026-11-02",
+   "actual_date": "2026-11-02",
+   "status": "Done",
+   "slip_days": 1,
+   "note": ""
+  },
+  {
+   "release_id": "R07",
+   "milestone": "Docs & release notes",
+   "owner_function": "Docs",
+   "planned_date": "2026-11-08",
+   "forecast_date": "2026-11-18",
+   "actual_date": "",
+   "status": "In progress",
+   "slip_days": 10,
+   "note": ""
+  },
+  {
+   "release_id": "R07",
+   "milestone": "GA go/no-go",
+   "owner_function": "Product Ops",
+   "planned_date": "2026-11-11",
+   "forecast_date": "2026-11-19",
+   "actual_date": "",
+   "status": "Not started",
+   "slip_days": 8,
+   "note": ""
+  },
+  {
+   "release_id": "R10",
+   "milestone": "Code freeze",
+   "owner_function": "Engineering",
+   "planned_date": "2026-11-06",
+   "forecast_date": "2026-11-12",
+   "actual_date": "2026-11-12",
+   "status": "Done",
+   "slip_days": 6,
+   "note": ""
+  },
+  {
+   "release_id": "R10",
+   "milestone": "Pricing approved",
+   "owner_function": "Pricing",
+   "planned_date": "2026-11-24",
+   "forecast_date": "2026-12-01",
+   "actual_date": "",
+   "status": "Blocked",
+   "slip_days": 7,
+   "note": "Needs Finance sign-off on metering logic first"
+  }
+ ],
+ "overdue_actions": [
+  {
+   "release_id": "R04",
+   "description": "Chase partner counsel on T&C redlines",
+   "owner": "Farah Khan",
+   "owner_function": "Legal",
+   "due_on": "2026-11-04",
+   "days_overdue": 9
+  },
+  {
+   "release_id": "R10",
+   "description": "Finance sign-off on metering logic",
+   "owner": "Nisha Agarwal",
+   "owner_function": "Finance",
+   "due_on": "2026-11-06",
+   "days_overdue": 7
+  },
+  {
+   "release_id": "R08",
+   "description": "Submit W3 status update",
+   "owner": "Deepak Joshi",
+   "owner_function": "Engineering",
+   "due_on": "2026-11-07",
+   "days_overdue": 6
+  },
+  {
+   "release_id": "R01",
+   "description": "Confirm pen-test vendor slot or alternative vendor",
+   "owner": "Imran Sheikh",
+   "owner_function": "Security",
+   "due_on": "2026-11-07",
+   "days_overdue": 6
+  },
+  {
+   "release_id": "R05",
+   "description": "Submit W3 status update",
+   "owner": "Karan Gupta",
+   "owner_function": "Engineering",
+   "due_on": "2026-11-07",
+   "days_overdue": 6
+  },
+  {
+   "release_id": "R02",
+   "description": "Escalate SKU approval after missed 4 Nov slot",
+   "owner": "Rahul Menon",
+   "owner_function": "Product",
+   "due_on": "2026-11-10",
+   "days_overdue": 3
+  },
+  {
+   "release_id": "R04",
+   "description": "Fix 5 P1 defects in search indexing",
+   "owner": "Sneha Reddy",
+   "owner_function": "Engineering",
+   "due_on": "2026-11-12",
+   "days_overdue": 1
+  },
+  {
+   "release_id": "R02",
+   "description": "Prepare price list draft for publication",
+   "owner": "Rohit Bansal",
+   "owner_function": "Pricing",
+   "due_on": "2026-11-12",
+   "days_overdue": 1
+  },
+  {
+   "release_id": "R07",
+   "description": "Fix Salesforce API v61 test failures",
+   "owner": "Priya Nair",
+   "owner_function": "Engineering",
+   "due_on": "2026-11-12",
+   "days_overdue": 1
+  },
+  {
+   "release_id": "R10",
+   "description": "Close metering accuracy gap to 99.9%",
+   "owner": "Arjun Iyer",
+   "owner_function": "Engineering",
+   "due_on": "2026-11-12",
+   "days_overdue": 1
+  }
+ ],
+ "green_but_data_disagrees": [
+  {
+   "release_id": "R02",
+   "product": "Cloud Connector",
+   "release_status": "Active",
+   "week": "W4",
+   "reported_rag": "Green",
+   "open_slips_or_blocks": "Pricing approved",
+   "max_slip_days": 9
+  }
+ ]
+}

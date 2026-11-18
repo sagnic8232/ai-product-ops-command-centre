@@ -1,0 +1,37 @@
+update_id,release_id,week,gt_inconsistent,gt_has_risk,gt_risk_categories,gt_dependency_functions,label_note,label_status
+U001,R01,W1,0,0,,,,verified
+U002,R01,W2,1,1,Schedule;Quality,,Green despite code-freeze slip and 12% perf regression,verified
+U003,R01,W3,0,1,Schedule;Quality;Security,Security,,verified
+U004,R01,W4,1,1,Schedule;Quality;Security,Security,REVIEWED: Needs an approval from Leadership,verified
+U005,R02,W1,0,0,,Pricing,Dependency exists but no risk yet,verified
+U006,R02,W2,0,0,,Pricing,,verified
+U007,R02,W3,1,1,Commercial;Schedule,Pricing,REVIEWED: Colour should be Amber since dependancy on Pricing,verified
+U008,R02,W4,1,1,Commercial;Schedule,Pricing,REVIEWED: Colour should be Amber since dependancy on Pricing,verified
+U009,R03,W1,0,0,,,,verified
+U010,R03,W2,0,0,,,,verified
+U011,R03,W3,0,0,,,STALE: exact copy of W2 (rules should catch; not an LLM label),verified
+U012,R03,W4,0,0,,Security,"Routine dependency on Security review, on schedule",verified
+U013,R04,W1,0,0,,Legal;Partner,,verified
+U014,R04,W2,1,1,Quality;Commercial,Legal;Partner,Green with 5 P1s and stalled legal; no obvious risk keywords,verified
+U015,R04,W3,1,1,Schedule;Quality;Commercial,Legal;Partner;Marketing,REVIEWED: Reported RAG should be Red,verified
+U016,R04,W4,0,1,Schedule;Commercial,Legal;Partner,Explicit decision request,verified
+U017,R05,W1,0,0,,Platform Eng,Submitted late (Fri),verified
+U018,R05,W2,0,0,,Platform Eng,Submitted late (Fri),verified
+U019,R05,W4,0,1,Schedule;Dependency,Platform Eng,W3 missing,verified
+U020,R06,W1,0,0,,,,verified
+U021,R06,W2,0,0,,,,verified
+U022,R06,W3,0,0,,,,verified
+U023,R06,W4,0,0,,,Negation trap: 'No escalations',verified
+U024,R07,W1,0,0,,,,verified
+U025,R07,W3,1,1,Quality;Schedule,,REVIEWED: Colour should be Amber,verified
+U026,R07,W4,0,1,Quality;Schedule,,REVIEWED: Colour should be Green,verified
+U027,R08,W1,0,1,Quality,,,verified
+U028,R08,W2,0,1,Quality,,STALE: near-copy of W1,verified
+U029,R08,W4,0,0,,,Resolved-blocker trap. W3 missing,verified
+U030,R09,W1,0,1,Quality,Security,Customer-impacting issue being fixed,verified
+U031,R09,W2,0,0,,,,verified
+U032,R09,W3,0,0,,,Negation trap: 'No regressions',verified
+U033,R09,W4,0,0,,,,verified
+U034,R10,W1,0,0,,Finance;Pricing,,verified
+U035,R10,W2,1,1,Quality;Schedule,,REVIEWED: Colour should be Amber,verified
+U036,R10,W3,0,1,Schedule;Commercial,Finance;Pricing,W4 missing,verified

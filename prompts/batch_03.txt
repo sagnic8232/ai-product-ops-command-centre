@@ -1,0 +1,127 @@
+You are a Product Operations analyst reviewing weekly TPM status updates for software releases.
+For EACH update below, judge only from the update text and the fields given. Do not invent facts.
+
+Definitions:
+- inconsistent: true if reported_rag does not match what the text describes. Typical case: reported_rag is
+  "Green" but the text describes a slipped or likely-slipping date, a missed approval, quality below its exit
+  criterion, open P1 defects, failing tests, or a stalled dependency. Also true if the RAG is Amber/Red but the
+  text says everything is on track with no open problems. Otherwise false.
+- has_risk: true if the text describes a CURRENT, UNRESOLVED threat to schedule, quality, security or commercial
+  readiness. Resolved past problems and negated statements (e.g. "no escalations", "blocker is resolved") are NOT
+  risks. A dependency that is on schedule is NOT a risk by itself.
+- risks: each with category in ['Schedule', 'Quality', 'Security', 'Commercial', 'Dependency'], severity in [High, Medium, Low].
+- dependencies: anything the release needs from a team or party outside its own engineering team (a deliverable,
+  sign-off, approval or decision), even if on schedule. function must be one of ['Legal', 'Pricing', 'Finance', 'Marketing', 'Security', 'Platform Eng', 'QA', 'Support', 'Docs', 'Partner'].
+  "Partner" = an external commercial partner. Do not list teams that are merely informed.
+- needs_decision: true only if the text explicitly asks leadership for a decision.
+- evidence: a VERBATIM quote copied exactly from update_text (max 25 words). Every inconsistency, risk and
+  dependency needs one. If you cannot quote it, do not flag it.
+
+Return ONLY a JSON array (no prose, no markdown fences), one object per update, in this exact shape:
+[{"update_id": "U001",
+   "inconsistent": false, "inconsistency_reason": "", "inconsistency_evidence": "",
+   "has_risk": false,
+   "risks": [{"category": "Schedule", "severity": "High", "evidence": "..."}],
+   "dependencies": [{"function": "Pricing", "needed": "SKU approval", "evidence": "..."}],
+   "needs_decision": false, "decision": "",
+   "confidence": 0.0}]
+
+Updates:
+[
+ {
+  "update_id": "U025",
+  "release": "Connector Pack 3.0.5 (Patch)",
+  "week": "W3",
+  "planned_ga": "2026-11-13",
+  "reported_rag": "Green",
+  "update_text": "QA rerun has 2 connectors (SAP, Salesforce) still failing 11 tests. Fix in progress. May need to move GA by a week."
+ },
+ {
+  "update_id": "U026",
+  "release": "Connector Pack 3.0.5 (Patch)",
+  "week": "W4",
+  "planned_ga": "2026-11-13",
+  "reported_rag": "Amber",
+  "update_text": "SAP connector fixed. Salesforce tests still failing on the API v61 changes; GA moved to 20 Nov. Support has been told to hold the customer communication."
+ },
+ {
+  "update_id": "U027",
+  "release": "Workload Manager 6.1.1 (Patch)",
+  "week": "W1",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Amber",
+  "update_text": "Patch scope frozen: 9 fixes. Code freeze on track for 30 Oct. One blocker on the scheduler fix (deadlock under high concurrency) being investigated."
+ },
+ {
+  "update_id": "U028",
+  "release": "Workload Manager 6.1.1 (Patch)",
+  "week": "W2",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Amber",
+  "update_text": "Patch scope frozen: 9 fixes. Code freeze on track for 30 Oct. One blocker on the scheduler fix (deadlock under high concurrency) still being investigated."
+ },
+ {
+  "update_id": "U029",
+  "release": "Workload Manager 6.1.1 (Patch)",
+  "week": "W4",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Green",
+  "update_text": "The scheduler deadlock blocker from last month is resolved and verified in QA. Code freeze done 30 Oct, QA at 99.1%, no P1s. On track for 27 Nov."
+ },
+ {
+  "update_id": "U030",
+  "release": "Auth Service 2.8-HF1 (Hotfix)",
+  "week": "W1",
+  "planned_ga": "2026-10-28",
+  "reported_rag": "Amber",
+  "update_text": "Hotfix for an SSO token refresh failure affecting 3 enterprise customers. Fix verified in staging; security review in progress. Target 28 Oct."
+ },
+ {
+  "update_id": "U031",
+  "release": "Auth Service 2.8-HF1 (Hotfix)",
+  "week": "W2",
+  "planned_ga": "2026-10-28",
+  "reported_rag": "Green",
+  "update_text": "Security sign-off received. Hotfix deployed 28 Oct. All 3 customers confirmed the fix."
+ },
+ {
+  "update_id": "U032",
+  "release": "Auth Service 2.8-HF1 (Hotfix)",
+  "week": "W3",
+  "planned_ga": "2026-10-28",
+  "reported_rag": "Green",
+  "update_text": "No regressions since deployment. Closing this release."
+ },
+ {
+  "update_id": "U033",
+  "release": "Auth Service 2.8-HF1 (Hotfix)",
+  "week": "W4",
+  "planned_ga": "2026-10-28",
+  "reported_rag": "Green",
+  "update_text": "Closed. No further updates."
+ },
+ {
+  "update_id": "U034",
+  "release": "Billing Integration 1.3 (Minor)",
+  "week": "W1",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Green",
+  "update_text": "Usage metering events wired into the billing pipeline. Code freeze 6 Nov. Needs Finance sign-off on the metering logic and Pricing approval for the new overage rate."
+ },
+ {
+  "update_id": "U035",
+  "release": "Billing Integration 1.3 (Minor)",
+  "week": "W2",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Green",
+  "update_text": "Metering accuracy at 99.2% vs the 99.9% target. Code freeze will be 12 Nov instead of 6 Nov to close the gap."
+ },
+ {
+  "update_id": "U036",
+  "release": "Billing Integration 1.3 (Minor)",
+  "week": "W3",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Amber",
+  "update_text": "Accuracy at 99.7%. Finance hasn't signed off the metering logic yet, and Pricing can't take the overage rate to committee until they do. GA of 4 Dec is at risk."
+ }
+]

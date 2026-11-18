@@ -1,0 +1,14 @@
+release_id,milestone,owner_function,planned_date,forecast_date,actual_date,status,slip_days,note
+R01,Code freeze,Engineering,2026-11-06,2026-11-10,2026-11-10,Done,4,
+R01,"QA complete (>=95% pass, 0 open P1)",QA,2026-11-20,2026-11-27,,In progress,7,
+R01,Security review sign-off,Security,2026-11-22,2026-12-04,,Blocked,12,Pen-test vendor slot only from 1 Dec
+R02,Pricing approved,Pricing,2026-11-10,2026-11-19,,Blocked,9,Missed 4 Nov committee; outcome of 12 Nov slot pending
+R04,Code freeze,Engineering,2026-11-20,2026-12-04,,In progress,14,
+R04,Legal review complete,Legal,2026-12-08,2027-01-08,,Blocked,31,Partner T&Cs redlines unanswered
+R05,Code freeze,Engineering,2026-11-13,2026-11-20,,In progress,7,Waiting on Platform Eng v2 identity API (Sprint 48)
+R07,"QA complete (>=95% pass, 0 open P1)",QA,2026-10-30,2026-11-17,,In progress,18,Salesforce connector tests failing
+R07,Security review sign-off,Security,2026-11-01,2026-11-02,2026-11-02,Done,1,
+R07,Docs & release notes,Docs,2026-11-08,2026-11-18,,In progress,10,
+R07,GA go/no-go,Product Ops,2026-11-11,2026-11-19,,Not started,8,
+R10,Code freeze,Engineering,2026-11-06,2026-11-12,2026-11-12,Done,6,
+R10,Pricing approved,Pricing,2026-11-24,2026-12-01,,Blocked,7,Needs Finance sign-off on metering logic first

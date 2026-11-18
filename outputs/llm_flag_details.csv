@@ -1,0 +1,69 @@
+update_id,type,label,severity,evidence,needed
+U002,risk,Schedule,Medium,Code freeze moved to 10 Nov to land the optimizer changes.,
+U002,risk,Quality,High,Benchmarks show a 12% regression on join-heavy queries vs 4.9; perf team investigating.,
+U002,inconsistency,RAG vs text,,Code freeze moved to 10 Nov to land the optimizer changes.,
+U003,risk,Quality,High,"Join regression down to 5% after the fix, still above the 2% exit criterion.",
+U003,risk,Dependency,High,"Security pen-test vendor slot is only available from 1 Dec, which pushes security sign-off.",
+U003,dependency,Security,,"Security pen-test vendor slot is only available from 1 Dec, which pushes security sign-off.",Security sign-off (after pen-test)
+U004,risk,Schedule,High,"Security sign-off expected 4 Dec, so GA forecast moves to 18 Dec.",
+U004,risk,Quality,Medium,Regression now at 3%.,
+U004,dependency,Security,,"Security sign-off expected 4 Dec, so GA forecast moves to 18 Dec.",Security sign-off
+U005,dependency,Pricing,,New consumption-based SKU submitted to Pricing for approval.,Approval of new consumption-based SKU
+U006,dependency,Security,,Security sign-off received.,Security sign-off
+U006,dependency,Pricing,,Pricing committee review scheduled for 4 Nov.,Pricing committee review of SKU
+U007,risk,Dependency,Medium,Pricing committee did not get to our SKU on 4 Nov; next slot is 12 Nov.,
+U007,dependency,Pricing,,Pricing committee did not get to our SKU on 4 Nov; next slot is 12 Nov.,SKU approval
+U007,dependency,Docs,,Docs in progress.,Release documentation
+U007,inconsistency,RAG vs text,,Pricing committee did not get to our SKU on 4 Nov; next slot is 12 Nov.,
+U008,risk,Schedule,High,so GA will likely move to 27 Nov.,
+U008,risk,Commercial,High,Without an approved SKU we can't publish the price list,
+U008,dependency,Pricing,,Still waiting on the Pricing committee outcome from 12 Nov.,SKU approval
+U008,inconsistency,RAG vs text,,so GA will likely move to 27 Nov.,
+U010,dependency,Docs,,Docs drafting underway.,Release documentation
+U011,dependency,Docs,,Docs drafting underway.,Release documentation
+U012,dependency,Security,,"Security review in progress, expected 15 Nov.",Security review sign-off
+U012,dependency,Docs,,Docs drafted.,Release documentation
+U013,dependency,Partner,,Integration with the external lineage partner's connector has started.,Lineage connector from external partner
+U013,dependency,Legal,,Legal has received the partner T&Cs for review.,Review of partner T&Cs
+U014,risk,Quality,High,5 open P1 defects in search indexing.,
+U014,risk,Dependency,Medium,Legal sent redlines back to the partner on 27 Oct; the partner's counsel has not responded.,
+U014,dependency,Legal,,Legal sent redlines back to the partner on 27 Oct,Partner T&C redlines and clearance
+U014,dependency,Partner,,the partner's counsel has not responded.,Response to T&C redlines
+U014,inconsistency,RAG vs text,,5 open P1 defects in search indexing.,
+U015,risk,Schedule,High,Code freeze will move from 20 Nov to 4 Dec.,
+U015,risk,Quality,High,Search indexing P1s down from 5 to 3.,
+U015,risk,Dependency,Medium,Partner redlines still open.,
+U015,dependency,Partner,,Partner redlines still open.,Agreement on T&C redlines
+U015,dependency,Marketing,,Marketing has asked for final positioning by 25 Nov for the launch kit.,Launch kit (needs final positioning by 25 Nov)
+U016,risk,Schedule,High,the 18 Dec GA is not achievable; proposing 15 Jan.,
+U016,risk,Dependency,High,"The partner has still not returned the T&Cs, and Legal won't clear GA without them.",
+U016,dependency,Partner,,The partner has still not returned the T&Cs,Returned T&Cs
+U016,dependency,Legal,,Legal won't clear GA without them.,GA clearance
+U017,dependency,Platform Eng,,"Depends on Platform Eng's v2 identity API, planned for Sprint 46.",v2 identity API (Sprint 46)
+U018,dependency,Platform Eng,,Platform Eng confirmed Sprint 46 delivery.,v2 identity API (Sprint 46)
+U018,dependency,QA,,QA plan approved.,QA plan approval
+U019,risk,Dependency,High,"Platform Eng now says the v2 identity API lands in Sprint 48, not 46.",
+U019,risk,Schedule,High,GA of 11 Dec holds only if QA compresses to one week.,
+U019,dependency,Platform Eng,,"Platform Eng now says the v2 identity API lands in Sprint 48, not 46.",v2 identity API (now Sprint 48)
+U019,dependency,QA,,GA of 11 Dec holds only if QA compresses to one week.,QA cycle compressed to one week
+U021,dependency,Security,,Security scan clean.,Security scan
+U021,dependency,Docs,,Release notes in review.,Release notes
+U025,risk,Quality,High,"QA rerun has 2 connectors (SAP, Salesforce) still failing 11 tests.",
+U025,risk,Schedule,Medium,May need to move GA by a week.,
+U025,inconsistency,RAG vs text,,"QA rerun has 2 connectors (SAP, Salesforce) still failing 11 tests.",
+U026,risk,Quality,High,Salesforce tests still failing on the API v61 changes,
+U026,risk,Schedule,Medium,GA moved to 20 Nov.,
+U027,risk,Quality,High,One blocker on the scheduler fix (deadlock under high concurrency) being investigated.,
+U028,risk,Quality,High,One blocker on the scheduler fix (deadlock under high concurrency) still being investigated.,
+U030,risk,Quality,Medium,Hotfix for an SSO token refresh failure affecting 3 enterprise customers.,
+U030,dependency,Security,,security review in progress,Security review of hotfix
+U031,dependency,Security,,Security sign-off received.,Security sign-off
+U034,dependency,Finance,,Needs Finance sign-off on the metering logic and Pricing approval for the new overage rate.,Sign-off on metering logic
+U034,dependency,Pricing,,Needs Finance sign-off on the metering logic and Pricing approval for the new overage rate.,Approval of new overage rate
+U035,risk,Quality,High,Metering accuracy at 99.2% vs the 99.9% target.,
+U035,risk,Schedule,Medium,Code freeze will be 12 Nov instead of 6 Nov to close the gap.,
+U035,inconsistency,RAG vs text,,Metering accuracy at 99.2% vs the 99.9% target.,
+U036,risk,Dependency,High,"Finance hasn't signed off the metering logic yet, and Pricing can't take the overage rate to committee until they do.",
+U036,risk,Schedule,High,GA of 4 Dec is at risk.,
+U036,dependency,Finance,,Finance hasn't signed off the metering logic yet,Sign-off on metering logic
+U036,dependency,Pricing,,Pricing can't take the overage rate to committee until they do.,Committee approval of overage rate

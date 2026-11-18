@@ -1,0 +1,127 @@
+You are a Product Operations analyst reviewing weekly TPM status updates for software releases.
+For EACH update below, judge only from the update text and the fields given. Do not invent facts.
+
+Definitions:
+- inconsistent: true if reported_rag does not match what the text describes. Typical case: reported_rag is
+  "Green" but the text describes a slipped or likely-slipping date, a missed approval, quality below its exit
+  criterion, open P1 defects, failing tests, or a stalled dependency. Also true if the RAG is Amber/Red but the
+  text says everything is on track with no open problems. Otherwise false.
+- has_risk: true if the text describes a CURRENT, UNRESOLVED threat to schedule, quality, security or commercial
+  readiness. Resolved past problems and negated statements (e.g. "no escalations", "blocker is resolved") are NOT
+  risks. A dependency that is on schedule is NOT a risk by itself.
+- risks: each with category in ['Schedule', 'Quality', 'Security', 'Commercial', 'Dependency'], severity in [High, Medium, Low].
+- dependencies: anything the release needs from a team or party outside its own engineering team (a deliverable,
+  sign-off, approval or decision), even if on schedule. function must be one of ['Legal', 'Pricing', 'Finance', 'Marketing', 'Security', 'Platform Eng', 'QA', 'Support', 'Docs', 'Partner'].
+  "Partner" = an external commercial partner. Do not list teams that are merely informed.
+- needs_decision: true only if the text explicitly asks leadership for a decision.
+- evidence: a VERBATIM quote copied exactly from update_text (max 25 words). Every inconsistency, risk and
+  dependency needs one. If you cannot quote it, do not flag it.
+
+Return ONLY a JSON array (no prose, no markdown fences), one object per update, in this exact shape:
+[{"update_id": "U001",
+   "inconsistent": false, "inconsistency_reason": "", "inconsistency_evidence": "",
+   "has_risk": false,
+   "risks": [{"category": "Schedule", "severity": "High", "evidence": "..."}],
+   "dependencies": [{"function": "Pricing", "needed": "SKU approval", "evidence": "..."}],
+   "needs_decision": false, "decision": "",
+   "confidence": 0.0}]
+
+Updates:
+[
+ {
+  "update_id": "U001",
+  "release": "Query Engine 5.0 (Major)",
+  "week": "W1",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Green",
+  "update_text": "Feature development 90% done. Code freeze on track for 6 Nov. Performance benchmarks scheduled for next week."
+ },
+ {
+  "update_id": "U002",
+  "release": "Query Engine 5.0 (Major)",
+  "week": "W2",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Green",
+  "update_text": "Code freeze moved to 10 Nov to land the optimizer changes. Benchmarks show a 12% regression on join-heavy queries vs 4.9; perf team investigating."
+ },
+ {
+  "update_id": "U003",
+  "release": "Query Engine 5.0 (Major)",
+  "week": "W3",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Amber",
+  "update_text": "Code freeze now confirmed for 10 Nov. Join regression down to 5% after the fix, still above the 2% exit criterion. Security pen-test vendor slot is only available from 1 Dec, which pushes security sign-off."
+ },
+ {
+  "update_id": "U004",
+  "release": "Query Engine 5.0 (Major)",
+  "week": "W4",
+  "planned_ga": "2026-12-04",
+  "reported_rag": "Amber",
+  "update_text": "Code freeze completed 10 Nov. Regression now at 3%. Security sign-off expected 4 Dec, so GA forecast moves to 18 Dec. Need a leadership decision on whether to ship with the 3% regression documented as a known issue."
+ },
+ {
+  "update_id": "U005",
+  "release": "Cloud Connector 3.1 (Minor)",
+  "week": "W1",
+  "planned_ga": "2026-11-20",
+  "reported_rag": "Green",
+  "update_text": "Code freeze done 23 Oct. QA in progress, pass rate 94% and climbing. New consumption-based SKU submitted to Pricing for approval."
+ },
+ {
+  "update_id": "U006",
+  "release": "Cloud Connector 3.1 (Minor)",
+  "week": "W2",
+  "planned_ga": "2026-11-20",
+  "reported_rag": "Green",
+  "update_text": "QA at 97%, zero P1s. Security sign-off received. Pricing committee review scheduled for 4 Nov."
+ },
+ {
+  "update_id": "U007",
+  "release": "Cloud Connector 3.1 (Minor)",
+  "week": "W3",
+  "planned_ga": "2026-11-20",
+  "reported_rag": "Green",
+  "update_text": "Pricing committee did not get to our SKU on 4 Nov; next slot is 12 Nov. Docs in progress. Everything else on track for 20 Nov GA."
+ },
+ {
+  "update_id": "U008",
+  "release": "Cloud Connector 3.1 (Minor)",
+  "week": "W4",
+  "planned_ga": "2026-11-20",
+  "reported_rag": "Green",
+  "update_text": "Still waiting on the Pricing committee outcome from 12 Nov. Without an approved SKU we can't publish the price list, so GA will likely move to 27 Nov."
+ },
+ {
+  "update_id": "U009",
+  "release": "Admin Console 2.4 (Minor)",
+  "week": "W1",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Green",
+  "update_text": "UI redesign complete, code freeze planned 30 Oct. Usability test with 5 admins scheduled."
+ },
+ {
+  "update_id": "U010",
+  "release": "Admin Console 2.4 (Minor)",
+  "week": "W2",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Green",
+  "update_text": "Code freeze on track for 30 Oct. QA started; 212 of 230 test cases passed so far, no P1s. Docs drafting underway."
+ },
+ {
+  "update_id": "U011",
+  "release": "Admin Console 2.4 (Minor)",
+  "week": "W3",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Green",
+  "update_text": "Code freeze on track for 30 Oct. QA started; 212 of 230 test cases passed so far, no P1s. Docs drafting underway."
+ },
+ {
+  "update_id": "U012",
+  "release": "Admin Console 2.4 (Minor)",
+  "week": "W4",
+  "planned_ga": "2026-11-27",
+  "reported_rag": "Green",
+  "update_text": "Code freeze done 30 Oct. QA complete at 98.8% pass rate, no P1s. Security review in progress, expected 15 Nov. Docs drafted."
+ }
+]

@@ -1,0 +1,37 @@
+update_id,llm_inconsistent,inconsistency_reason,llm_has_risk,llm_risk_categories,llm_dependency_functions,needs_decision,decision,confidence
+U001,False,,False,,,False,,0.9
+U002,True,"Reported Green, but the text describes a slipped code freeze date and a 12% performance regression that is still under investigation.",True,Quality;Schedule,,False,,0.85
+U003,False,,True,Dependency;Quality,Security,False,,0.85
+U004,False,,True,Quality;Schedule,Security,True,Whether to ship with the 3% join regression documented as a known issue.,0.85
+U005,False,,False,,Pricing,False,,0.85
+U006,False,,False,,Pricing;Security,False,,0.9
+U007,True,"Reported Green, but the required Pricing approval was missed and moved to a later slot.",True,Dependency,Docs;Pricing,False,,0.8
+U008,True,"Reported Green, but GA is likely to slip from 20 Nov to 27 Nov because SKU approval is still pending.",True,Commercial;Schedule,Pricing,False,,0.9
+U009,False,,False,,,False,,0.9
+U010,False,,False,,Docs,False,,0.85
+U011,False,,False,,Docs,False,,0.6
+U012,False,,False,,Docs;Security,False,,0.85
+U013,False,,False,,Legal;Partner,False,,0.85
+U014,True,"Reported Green, but the text describes 5 open P1 defects and a stalled partner T&C negotiation.",True,Dependency;Quality,Legal;Partner,False,,0.9
+U015,False,,True,Dependency;Quality;Schedule,Marketing;Partner,False,,0.8
+U016,False,,True,Dependency;Schedule,Legal;Partner,True,"Hold GA for the partner connector, or ship 1.0 without it and add it in 1.1.",0.9
+U017,False,,False,,Platform Eng,False,,0.9
+U018,False,,False,,Platform Eng;QA,False,,0.85
+U019,False,,True,Dependency;Schedule,Platform Eng;QA,False,,0.8
+U020,False,,False,,,False,,0.9
+U021,False,,False,,Docs;Security,False,,0.8
+U022,False,,False,,,False,,0.9
+U023,False,,False,,,False,,0.9
+U024,False,,False,,,False,,0.9
+U025,True,"Reported Green, but 11 tests are still failing on 2 connectors and GA may slip by a week.",True,Quality;Schedule,,False,,0.9
+U026,False,,True,Quality;Schedule,,False,,0.85
+U027,False,,True,Quality,,False,,0.9
+U028,False,,True,Quality,,False,,0.85
+U029,False,,False,,,False,,0.9
+U030,False,,True,Quality,Security,False,,0.7
+U031,False,,False,,Security,False,,0.9
+U032,False,,False,,,False,,0.9
+U033,False,,False,,,False,,0.9
+U034,False,,False,,Finance;Pricing,False,,0.9
+U035,True,"Reported Green, but metering accuracy is below its 99.9% target and code freeze has slipped from 6 Nov to 12 Nov.",True,Quality;Schedule,,False,,0.9
+U036,False,,True,Dependency;Schedule,Finance;Pricing,False,,0.8

@@ -1,0 +1,6 @@
+task,method,positives_in_gt,TP,FP,FN,precision,recall,f1
+RAG-vs-text inconsistency,Keyword baseline,8,3,5,5,0.375,0.375,0.375
+RAG-vs-text inconsistency,LLM,8,6,0,2,1.0,0.75,0.8571428571428571
+Has unresolved risk,Keyword baseline,16,13,5,3,0.7222222222222222,0.8125,0.7647058823529411
+Has unresolved risk,LLM,16,16,0,0,1.0,1.0,1.0
+Dependency functions (micro),LLM,24,23,10,1,0.696969696969697,0.9583333333333334,0.8070175438596493

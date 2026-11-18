@@ -1,0 +1,39 @@
+release_id,week,tpm,update_id,submission_deadline,submitted_at,is_missing,is_late,hours_late,similarity_to_prev,is_stale
+R01,W1,Vikram Shah,U001,2026-10-22 18:00:00,2026-10-22 13:00:00,False,False,,,False
+R01,W2,Vikram Shah,U002,2026-10-29 18:00:00,2026-10-29 15:00:00,False,False,,0.345,False
+R01,W3,Vikram Shah,U003,2026-11-05 18:00:00,2026-11-05 16:00:00,False,False,,0.17,False
+R01,W4,Vikram Shah,U004,2026-11-12 18:00:00,2026-11-13 11:30:00,False,True,17.5,0.209,False
+R02,W1,Priya Nair,U005,2026-10-22 18:00:00,2026-10-22 12:00:00,False,False,,,False
+R02,W2,Priya Nair,U006,2026-10-29 18:00:00,2026-10-29 14:00:00,False,False,,0.26,False
+R02,W3,Priya Nair,U007,2026-11-05 18:00:00,2026-11-05 17:00:00,False,False,,0.269,False
+R02,W4,Priya Nair,U008,2026-11-12 18:00:00,2026-11-12 16:00:00,False,False,,0.38,False
+R03,W1,Arjun Iyer,U009,2026-10-22 18:00:00,2026-10-22 10:00:00,False,False,,,False
+R03,W2,Arjun Iyer,U010,2026-10-29 18:00:00,2026-10-29 13:00:00,False,False,,0.356,False
+R03,W3,Arjun Iyer,U011,2026-11-05 18:00:00,2026-11-05 14:00:00,False,False,,1.0,True
+R03,W4,Arjun Iyer,U012,2026-11-12 18:00:00,2026-11-12 15:00:00,False,False,,0.498,False
+R04,W1,Sneha Reddy,U013,2026-10-22 18:00:00,2026-10-22 12:00:00,False,False,,,False
+R04,W2,Sneha Reddy,U014,2026-10-29 18:00:00,2026-10-29 16:00:00,False,False,,0.36,False
+R04,W3,Sneha Reddy,U015,2026-11-05 18:00:00,2026-11-05 21:06:00,False,True,3.1,0.088,False
+R04,W4,Sneha Reddy,U016,2026-11-12 18:00:00,2026-11-12 17:00:00,False,False,,0.059,False
+R05,W1,Karan Gupta,U017,2026-10-22 18:00:00,2026-10-23 10:15:00,False,True,16.2,,False
+R05,W2,Karan Gupta,U018,2026-10-29 18:00:00,2026-10-30 09:40:12,False,True,15.7,0.429,False
+R05,W3,Karan Gupta,,2026-11-05 18:00:00,,True,False,,,False
+R05,W4,Karan Gupta,U019,2026-11-12 18:00:00,2026-11-12 15:00:00,False,False,,0.179,False
+R06,W1,Vikram Shah,U020,2026-10-22 18:00:00,2026-10-22 11:00:00,False,False,,,False
+R06,W2,Vikram Shah,U021,2026-10-29 18:00:00,2026-10-29 12:00:00,False,False,,0.167,False
+R06,W3,Vikram Shah,U022,2026-11-05 18:00:00,2026-11-05 13:00:00,False,False,,0.269,False
+R06,W4,Vikram Shah,U023,2026-11-12 18:00:00,2026-11-12 12:00:00,False,False,,0.297,False
+R07,W1,Priya Nair,U024,2026-10-22 18:00:00,2026-10-22 14:00:00,False,False,,,False
+R07,W2,Priya Nair,,2026-10-29 18:00:00,,True,False,,,False
+R07,W3,Priya Nair,U025,2026-11-05 18:00:00,2026-11-05 16:00:00,False,False,,0.28,False
+R07,W4,Priya Nair,U026,2026-11-12 18:00:00,2026-11-12 17:00:00,False,False,,0.433,False
+R08,W1,Deepak Joshi,U027,2026-10-22 18:00:00,2026-10-22 13:00:00,False,False,,,False
+R08,W2,Deepak Joshi,U028,2026-10-29 18:00:00,2026-10-29 14:00:00,False,False,,0.98,True
+R08,W3,Deepak Joshi,,2026-11-05 18:00:00,,True,False,,,False
+R08,W4,Deepak Joshi,U029,2026-11-12 18:00:00,2026-11-12 15:00:00,False,False,,0.301,False
+R09,W1,Karan Gupta,U030,2026-10-22 18:00:00,2026-10-22 09:00:00,False,False,,,False
+R09,W2,Karan Gupta,U031,2026-10-29 18:00:00,2026-10-29 11:00:00,False,False,,0.289,False
+R10,W1,Arjun Iyer,U034,2026-10-22 18:00:00,2026-10-22 15:00:00,False,False,,,False
+R10,W2,Arjun Iyer,U035,2026-10-29 18:00:00,2026-10-29 16:00:00,False,False,,0.343,False
+R10,W3,Arjun Iyer,U036,2026-11-05 18:00:00,2026-11-05 17:00:00,False,False,,0.253,False
+R10,W4,Arjun Iyer,,2026-11-12 18:00:00,,True,False,,,False
